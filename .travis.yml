@@ -7,7 +7,7 @@ script:
   git config --global user.name "Team 5" &&
   cd .. &&
   git clone --branch master https://Swolfeyes:$GITHUB_API_KEY@github.com/python-sprints/pyntxos-dashboard.git &&
-  mv pyntxos/* ./
+  mv pyntxos/* ./ &&
   git add . &&
   git commit -m "updated notebook" &&
   git push origin master
