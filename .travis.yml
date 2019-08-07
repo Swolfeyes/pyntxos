@@ -1,9 +1,16 @@
 language: python
-python: '3.7'
-script: python dummy.py
-end:
-  matrix:
-    secure: UZvhQzfWPYUAnwDCed6gq4S2xMX1Hg3adKXKRkIkzBVa5q1dxuPfhSnBDUgWS9t6QMRaWtGdfb/HrCgD+hfw63L3vVq8xBwbb64fYvyil9laWI6ntaNOmtiaFZirl9ixByEJd+QIId8WgSIunO1ia9vN5UuiOvrlStzwY8qMhlhCI3nz2CfjXRUw96+IsetKtoUiIDft5aD8lJC3dyJbrwcVDFICfbLS45kQVNfa1mbclvS/rbKoiFsRGMfqfMd2nIqGNz3X5MHzqo/uLMXBLvCTsByMA+pzCpbSUANVOZ6xFAKMujMmfotf8A30kr2Vr3KFpFN96fxlBCGAtZZ3apDevM7UYi9Rlzl55A3RwvBa0NeFUJpLOoLvm6Hpt9zrq2OyKEwUOqtxSkvrp6YQBZ6PMt+fmpSZaT8H4E585DwzRxkPW5QrVCzeBst0E+HhjpLBx4t7PD3aDHYKWr+koioF9B3lOK2y6EWk4obEsACYv3An9iSiVighBAojQ3iKmBAyz7E4ux/IluZWzQ9/OR9InseXS7r9JBKXvroxGRtJ0N0urnmyeVcv16RT7EXigkaHfz2Y+Vo6ndsLcpK9kSOZ2IbsToGy1XfvtxJsOyq2DRf/5mNVLKN74lqo3S5hdqSUmsILcF9TYYJ+LQO/JO1gyvknp8EQm3T7OISDchk=
+python:
+  "3.7"
+script:
+  python dummy.py ||
+  git config --global user.email "s.occhilupo87@gmail.com" ||
+  git config --global user.name "Team 5" ||
+  git clone --quiet --branch master = https://Swolfeyes:$GITHUB_API_KEY@github.com/python-sprints/pyntxos-daashboard.git data-repo ||
+  cd data-repo ||
+  mv ../* ./ ||
+  git add . ||
+  git commit -m "updated notebook" ||
+  git push origin master
 env:
   matrix:
     secure: aiqaI8Pn35FZnBjylKPAnbohpASLl574V41azI8mYAOWmorpd4sssZzfrfjef6BCCOvhRaiLUE2U5BMg8Akr2GUEWt4104SUaRAGZg5AzS6WAbZ+Z0so71N7pwQ+2sJP/EBu3sDmKrVoDuSybvj/ykdRgRPdTkrSldJPBsysFUXuQbbrL6gpE8yHyxQqFY+1d9bepGm9dULIsg8mIhmOvKszAfgFAohNaLNEBPuXXMfbE7a8ThFIOR7yadaf21dMA0kN0pKCtBvi7y8bDA49kSi0ShF+4S1eQ2aX+0ZAvCKtIBYkz9KFpAfhkOfUfq8lVIaqp+eKCz5SxXG48Hgxr2S6ilH4hk6qAl6DzkT721DzQ+4Q2hq4CnzWfl+Qn0jkEhXqHHXgFivHGyJ+gLFzG8hwx5f0Otd20OB3+5rsZqGg+Z8q0jbrIexxeiSI/JRYsFFxom4bIGOmjfuRMPMu06coCS7EzzkGo6kB4OFGRIia7qfbNiuUPeErHViEpNo8PeEB19i2QfXDeSXp+Cfydy7hWDPRhVRcs+XKkidJ2ahABHlWtFzeXABhXgja2I2Lem+rWcnRVG9MmWwQ+fuXLN4B5p3B8IVkBhy+biYFN0b4B4ScbvuBb4FaO0gcGtT8ZkHrZMv0Ta70WI7PP5b4l0nKgHKb3emk3WE/gxPGS6c=
